@@ -34,7 +34,7 @@ public class Pokemon {
 	 */
 	public Pokemon(String name, Type type) {
 		this.name = name;
-		this.type = Type.Water;
+		this.type = type;
 		this.number = nextNumber;
 		nextNumber++;
 	}
@@ -139,8 +139,8 @@ public class Pokemon {
 	 */
 	public double averageForce() {
 		double averageForce = 0;
-		double sumScores = 1;
-		int nrOfValidScores = 0;
+		double sumScores = 0;
+		double nrOfValidScores = 0;
 		// check if competitions list is initialized
 		if (this.getCompetitions() != null) {
 			// check if competitions exist
@@ -151,7 +151,7 @@ public class Pokemon {
 					double cscore = c.getScores().get(this);
 					// get the score for the type +1 since ordinal
 					// starts with 0
-					double tscore = (this.getType().ordinal() + 1);
+					double tscore = ( (double) this.getType().ordinal() + 1);
 					// normalize the score
 					double nscore = tscore * (cscore / (cscore+1));
 					sumScores += nscore;
@@ -159,13 +159,19 @@ public class Pokemon {
 				}
 			} else {
 				// list of competition is empty
+				return 0.0;
 			}
 		} else {
 			// competitions not initialized
-			return -1;
+			return -1.0;
 		}
 		averageForce = sumScores / nrOfValidScores;
-		return Math.E;
+		return averageForce;
+		//return Math.E;
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 
 }
