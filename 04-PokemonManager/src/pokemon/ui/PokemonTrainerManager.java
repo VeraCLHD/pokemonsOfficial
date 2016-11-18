@@ -50,7 +50,7 @@ public class PokemonTrainerManager {
         p1.setTrainer(t1);
         p2.setTrainer(t1);
     	
-        Swap swap1 = new Swap(t0, t1);
+        Swap swap1 = new Swap();
         p0.getSwaps().add(swap1);
         try {
 			swap1.execute(p0, p1);
@@ -60,7 +60,7 @@ public class PokemonTrainerManager {
 		}
         
         
-        Swap swap2 = new Swap(t1, t0);
+        Swap swap2 = new Swap();
         p1.getSwaps().add(swap2);
         try {
 			swap2.execute(p1, p0);
@@ -69,7 +69,7 @@ public class PokemonTrainerManager {
 			e.printStackTrace();
 		}
         
-        Swap swap3 = new Swap(t0, t1);
+        Swap swap3 = new Swap();
         p0.getSwaps().add(swap3);
         try {
 			swap3.execute(p0, p1);
@@ -78,7 +78,7 @@ public class PokemonTrainerManager {
 			e.printStackTrace();
 		}
         
-        Swap swap4 = new Swap(t1, t0);
+        Swap swap4 = new Swap();
         p1.getSwaps().add(swap4);
         try {
 			swap4.execute(p1, p0);
@@ -88,7 +88,7 @@ public class PokemonTrainerManager {
 		}
         
       
-        Competition competition1 = new Competition(t0,t1);
+        Competition competition1 = new Competition();
         try {
 			competition1.execute(p0, p1);
 		} catch (Exception e) {

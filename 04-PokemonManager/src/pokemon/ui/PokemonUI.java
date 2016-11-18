@@ -18,8 +18,8 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
-import basic_classes.Pokemon;
-import basic_classes.Trainer;
+import pokemon.Pokemon;
+import pokemon.Trainer;
 
 /**
  * Pokemon UIDialog displays Pokemons in SWT Table Widget
@@ -112,7 +112,7 @@ public class PokemonUI extends Dialog {
 	            item.setText(i++, String.valueOf(p.isSwapAllow()));
 	            item.setText(i++, String.valueOf(p.getSwaps().size()));
 	            item.setText(i++, String.valueOf(p.getCompetitions().size()));
-	            item.setText(i++, p.getNumber().toString());
+	            item.setText(i++, String.valueOf(p.getNumber()));
 	            i = 0;
 	        }
 	        // sorting
